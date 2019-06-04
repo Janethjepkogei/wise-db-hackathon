@@ -1,15 +1,6 @@
 <template>
   <v-app dark>
-    <v-toolbar app class="primary">
-      <v-toolbar-side-icon></v-toolbar-side-icon>
-      <v-toolbar-title>Title</v-toolbar-title>
-      <v-spacer></v-spacer>
-      <!-- <v-toolbar-items class="hidden-sm-and-down"> -->
-      <v-toolbar-items>
-        <v-btn flat>Link One</v-btn>
-        <v-btn flat>Link Two</v-btn>
-      </v-toolbar-items>
-    </v-toolbar>
+    <top-bar></top-bar>
   
     <!-- <v-toolbar class="primary" app>
       <v-toolbar-title class="headline text-uppercase">
@@ -29,47 +20,20 @@
     <v-content class="secondary">
       <router-view/>
     </v-content>
-
-    <v-bottom-nav
-      :active.sync="bottomNav"
-      :value="true"
-      absolute
-      class="primary"
-    >
-      <v-btn
-        color="active"
-        flat
-        value="recent"
-      >
-        <span>Recent</span>
-        <v-icon>history</v-icon>
-      </v-btn>
-
-      <v-btn
-        color="active"
-        flat
-        value="favorites"
-      >
-        <span>Favorites</span>
-        <v-icon>favorite</v-icon>
-      </v-btn>
-
-      <v-btn
-        color="active"
-        flat
-        value="nearby"
-      >
-        <span>Nearby</span>
-        <v-icon>place</v-icon>
-      </v-btn>
-    </v-bottom-nav>
-
+  <bottom-bar></bottom-bar>
   </v-app>
 </template>
 
 <script>
+import BottomBar from '@/components/BottomBar.vue'
+import TopBar from '@/components/TopBar.vue'
+
 export default {
   name: 'App',
+  components: {
+    BottomBar,
+    TopBar
+  },
   data () {
     return {
       fav: true,

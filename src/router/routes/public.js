@@ -1,10 +1,16 @@
-import Login from '@/components/Login.vue'
+import Login from '@/views/Login.vue'
+import Start from '@/views/Start.vue'
 
 const routes = [
   {
     path: '/login',
     name: 'login',
     component: Login
+  },
+  {
+    path: '/start',
+    name: 'start',
+    component: Start
   }
 ]
 
