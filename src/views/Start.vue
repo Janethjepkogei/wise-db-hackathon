@@ -1,11 +1,11 @@
 <template>
     <v-container class="text-xs-center" id="container">
         <div>
-            <h1 id="title">Title of App</h1>
+            <h1 id="title">MoneyWi$e</h1>
             <p>Challenge your financial literacy</p>
         </div>
         <div style="display: grid;">
-            <v-btn class="primary">Login</v-btn>
+            <router-link to="/login"><v-btn class="primary">Login</v-btn></router-link>
             <v-btn class="secondary" flat>Sign Up</v-btn>
         </div>
     </v-container>

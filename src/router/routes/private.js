@@ -1,7 +1,13 @@
+import Categories from '@/views/Categories.vue'
 import HelloWorld from '@/components/HelloWorld.vue'
 import Home from '@/views/Home.vue'
 
 const routes = [
+    {
+      path: '/categories',
+      name: 'categories',
+      component: Categories
+    },
     {
       path: '/helloworld',
       name: 'helloworld',
