@@ -1,7 +1,7 @@
 <template>
     <v-container class="text-xs-center" id="container">
         <div>
-            <h1 id="title">MoneyWi$e</h1>
+            <h1 id="title">MoneyW!se</h1>
             <p>Challenge your financial literacy</p>
         </div>
         <div style="display: grid;">
