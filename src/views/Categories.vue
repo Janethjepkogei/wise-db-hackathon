@@ -1,27 +1,22 @@
 <template>
-    <v-container id="container" class="text-xs-center">
-        <h1 id="pickCategory">Pick a Category</h1>
-        <!-- <div> -->
-          <v-list v-for="(i, index) in categories" :key="index" class="accent" id="list">
-            <v-list-title avatar style="display: flex;">
-              <v-list-tile-avatar class="avatar">
-                <img :src="i.avatar"/>
-                <!-- <img :src="require('@/assets/target.png')"/> -->
-              </v-list-tile-avatar>
-              <v-list-tile-content class="secondary">
-                {{i.title}}
-                <!-- <v-list-tile-title v-html="i.title"></v-list-tile-title>
-                <v-list-tile-sub-title></v-list-tile-sub-title> -->
-              </v-list-tile-content>
-              <v-list-tile-avatar class="secondary">
-                <!-- <v-icon color="green">check_circle</v-icon> -->
-                <!-- <v-icon color="yellow">warning</v-icon> -->
-                <v-icon :color="i.status">{{icons[i.status]}}</v-icon>
-              </v-list-tile-avatar>
-            </v-list-title>
-          </v-list>
-          <div id="more">More ></div>
-    </v-container>
+  <v-container id="container" class="text-xs-center">
+      <h1 id="pickCategory">Pick a Category</h1>
+      <v-list v-for="(i, index) in categories" :key="index" class="accent" id="list">
+        <v-list-title avatar style="display: flex;">
+          <v-list-tile-avatar class="avatar">
+            <img :src="i.avatar"/>
+          </v-list-tile-avatar>
+          <v-list-tile-content class="secondary">
+            {{i.title}}
+          </v-list-tile-content>
+          <v-list-tile-avatar class="secondary">
+            <v-icon :color="i.status">{{icons[i.status]}}</v-icon>
+          </v-list-tile-avatar>
+        </v-list-title>
+      </v-list>
+      <div id="more">More ></div>
+      <v-img id="mentor" :src="require('@/assets/user.png')"></v-img>
+  </v-container>
 </template>
 
 <script>
@@ -100,6 +95,13 @@ export default {
     font-style: oblique;
     height: 40px;
     text-align: left;
+  }
+  #mentor {
+    border-radius: 50%;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50px;
   }
   #more {
     color: #4F8FCF;
