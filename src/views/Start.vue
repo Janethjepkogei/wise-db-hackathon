@@ -7,7 +7,7 @@
             </div>
             <div><v-img :src="require('@/assets/students.png')"></v-img></div>
             <div id="buttons">
-                <router-link to="/login"><v-btn class="primary" @click="login()">Login</v-btn></router-link>
+                <v-btn id="login" class="primary" @click="login()">Login</v-btn>
                 <router-link to="#" id="signUp" class="white-text">Sign Up</router-link>
             </div>
         </div>
@@ -22,7 +22,7 @@ export default {
     methods: {
         login() {
             store.commit("account/setLoggedIn", true);
-            this.$router.push('/home');
+            this.$router.push('home');
         }
     }
 }
@@ -31,6 +31,7 @@ export default {
 <style>
     #buttons {
         display: grid;
+        justify-content: center;
         padding-top: 10px;
     }
     #container {
@@ -39,6 +40,9 @@ export default {
         height: 100%;
         padding-left: 0;
         padding-right: 0;
+    }
+    #login {
+        width: fill-content;
     }
     #signUp {
         text-decoration: none;
