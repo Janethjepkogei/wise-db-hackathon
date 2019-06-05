@@ -42,13 +42,13 @@ export default {
         padding-right: 0;
     }
     #login {
-        width: fill-content;
+        width: 'fill-content';
     }
     #signUp {
         text-decoration: none;
     }
     #title {
-        font-family: Futura, Trebuchet MS, Arial, sans-serif;
+        font-family: 'Futura', 'Trebuchet MS', Arial, sans-serif;
         font-size: 50px;
     }
 </style>
