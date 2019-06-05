@@ -23,12 +23,16 @@
 <script>
 import store from '@/store'
 import MentorAdvice from '@/components/MentorAdvice.vue'
+import {quizService} from '@/services/quiz.service'
 export default {
   components: {
     MentorAdvice
   },
   created() {
     store.commit('navigation/setTopBarTitle', 'Quiz Categories')
+    quizService.getQuizCategories().then(data => {
+      console.log(data);
+    })
   },
   data () {
     return {

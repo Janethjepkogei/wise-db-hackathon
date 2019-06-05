@@ -1,6 +1,7 @@
 import Categories from '@/views/Categories.vue'
 import HelloWorld from '@/components/HelloWorld.vue'
 import Home from '@/views/Home.vue'
+import MultipleChoice from '@/views/questions/MultipleChoice.vue'
 
 const routes = [
     {
@@ -17,6 +18,11 @@ const routes = [
       path: '/home',
       name: 'home',
       component: Home
+    },
+    {
+      path: '/quizzes/multiplechoice',
+      name: 'multiplechoice',
+      component: MultipleChoice
     }
 ]
 
