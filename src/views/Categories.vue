@@ -1,38 +1,26 @@
 <template>
-    <v-container class="text-xs-center">
-        <h1>Pick a Category</h1>
-        <v-list two-line class="accent">
-          <template v-for="(item, index) in items">
-            <v-subheader
-              v-if="item.header"
-              :key="item.header"
-            >
-              {{ item.header }}
-            </v-subheader>
-
-            <v-divider
-              v-else-if="item.divider"
-              :key="index"
-              :inset="item.inset"
-            ></v-divider>
-
-            <v-list-tile
-              v-else
-              :key="item.title"
-              avatar
-              @click=""
-            >
-              <v-list-tile-avatar>
-                <img :src="item.avatar">
+    <v-container id="container" class="text-xs-center">
+        <h1 id="pickCategory">Pick a Category</h1>
+        <!-- <div> -->
+          <v-list v-for="(i, index) in categories" :key="index" class="accent" id="list">
+            <v-list-title avatar style="display: flex;">
+              <v-list-tile-avatar class="avatar">
+                <img :src="i.avatar"/>
+                <!-- <img :src="require('@/assets/target.png')"/> -->
               </v-list-tile-avatar>
-
-              <v-list-tile-content>
-                <v-list-tile-title v-html="item.title"></v-list-tile-title>
-                <v-list-tile-sub-title v-html="item.subtitle"></v-list-tile-sub-title>
+              <v-list-tile-content class="secondary">
+                {{i.title}}
+                <!-- <v-list-tile-title v-html="i.title"></v-list-tile-title>
+                <v-list-tile-sub-title></v-list-tile-sub-title> -->
               </v-list-tile-content>
-            </v-list-tile>
-          </template>
-        </v-list>
+              <v-list-tile-avatar class="secondary">
+                <!-- <v-icon color="green">check_circle</v-icon> -->
+                <!-- <v-icon color="yellow">warning</v-icon> -->
+                <v-icon :color="i.status">{{icons[i.status]}}</v-icon>
+              </v-list-tile-avatar>
+            </v-list-title>
+          </v-list>
+          <div id="more">More ></div>
     </v-container>
 </template>
 
@@ -44,27 +32,86 @@ export default {
   },
   data () {
     return {
-      items: [
-        { header: 'Today' },
+      categories: [
         {
-          avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
-          title: 'Brunch this weekend?',
-          subtitle: "<span class='text--primary'>Ali Connors</span> &mdash; I'll be in your neighborhood doing errands this weekend. Do you want to hang out?"
+          avatar: require('@/assets/target.png'),
+          title: 'Goal Setting',
+          status: 'green'
         },
-        { divider: true, inset: true },
         {
-          avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
-          title: 'Summer BBQ <span class="grey--text text--lighten-1">4</span>',
-          subtitle: "<span class='text--primary'>to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this weekend."
+          avatar: require('@/assets/spending.png'),
+          title: 'Spending',
+          status: 'red'
         },
-        { divider: true, inset: true },
         {
-          avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg',
-          title: 'Oui oui',
-          subtitle: "<span class='text--primary'>Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?"
+          avatar: require('@/assets/tax.png'),
+          title: 'Taxation',
+          status: 'amber'
+        },
+        {
+          avatar: require('@/assets/education.png'),
+          title: 'Cost of College',
+          status: 'green'
+        },
+        {
+          avatar: require('@/assets/heart.png'),
+          title: 'Charitable Giving',
+          status: 'red'
+        },
+        {
+          avatar: require('@/assets/shield.png'),
+          title: 'General',
+          status: 'amber'
         }
-      ]
+      ],
+      icons: {
+        red: 'error',
+        amber: 'warning',
+        green: 'check_circle'
+      }
     }
   }
-  }
+}
 </script>
+
+<style>
+  #app > div.application--wrap > main > div > div > div
+  v-list-title > div.v-list__tile__avatar.avatar {
+    justify-content: center;
+  }
+  #container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  #list {
+    margin-bottom: 8px;
+    padding: 8px 8px 8px 0;
+  }
+  #list > v-list-title > div.v-list__tile__content {
+    padding: 0 8px;
+  }
+  #list > v-list-title > div.avatar {
+    align-items: center;
+  }
+  #list > v-list-title > div.secondary {
+    align-items: center;
+    font-family: cursive;
+    font-size: 20px;
+    font-style: oblique;
+    height: 40px;
+    text-align: left;
+  }
+  #more {
+    color: #4F8FCF;
+    font-family: cursive;
+    font-size: 20px;
+    font-style: oblique;
+    text-align: right;
+  }
+  #pickCategory {
+    color: #4F8FCF;
+    font-family: cursive;
+    font-style: oblique;
+    font-size: 30px;
+  }
+</style>
