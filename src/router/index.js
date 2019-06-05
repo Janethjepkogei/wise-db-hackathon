@@ -9,7 +9,7 @@ const router = new Router({
     routes: [
         {
             path: '/',
-            redirect: '/home'
+            redirect: '/start'
         }
     ].concat(routes)
 })
