@@ -12,7 +12,6 @@ const mutations = {
 
 const actions = {
     navigate({commit}, data) {
-        commit('setTopBarTitle', data.title);
         router.push(data.url);
     }
 }
