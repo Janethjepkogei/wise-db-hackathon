@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <countdown></countdown>
-        <div id="takeQuiz">
+        <div id="takeQuiz" @click="navigate({url: '/categories', title: 'Categories'})">
             <v-img height="50%" width="50%" :src="require('@/assets/test.png')"></v-img>
             <h2>Take Quiz</h2>
         </div>
@@ -22,12 +22,17 @@
 </template>
 
 <script>
-    import Countdown from '@/components/Countdown.vue'
-    export default {
-        components: {
-            Countdown
-        }   
+import { mapActions } from 'vuex'
+import Countdown from '@/components/Countdown.vue'
+
+export default {
+    components: {
+        Countdown
+    },
+    methods: {
+        ...mapActions('navigation', ['navigate'])
     }
+}
 </script>
 
 <style>

@@ -16,13 +16,15 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import store from '@/store'
 
 export default {
     methods: {
+        ...mapActions('navigation', ['navigate']),
         login() {
             store.commit("account/setLoggedIn", true);
-            this.$router.push('home');
+            this.navigate({url: '/home', title: 'Home'})
         }
     }
 }

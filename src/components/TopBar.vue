@@ -53,18 +53,25 @@
             </v-card-actions> -->
         </v-card>
         </v-menu>
-      <v-toolbar-title>Home</v-toolbar-title>
+      <v-toolbar-title>{{topBarTitle}}</v-toolbar-title>
     </v-toolbar>
 </template>
 
 <script>
-    export default {
-        data () {
-            return {
-                menu: false
-            }
+import { mapState } from "vuex";
+
+export default {
+    computed: {
+        ...mapState({
+            topBarTitle: state => state.navigation.topBarTitle
+        })
+    },
+    data () {
+        return {
+            menu: false
         }
     }
+}
 </script>
 
 <style>
