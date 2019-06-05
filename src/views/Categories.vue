@@ -15,13 +15,18 @@
         </v-list-title>
       </v-list>
       <div id="more">More ></div>
-      <v-img id="mentor" :src="require('@/assets/user.png')"></v-img>
+      <mentor-advice></mentor-advice>
+      <!-- <v-img id="mentor" :src="require('@/assets/user.png')"></v-img> -->
   </v-container>
 </template>
 
 <script>
 import store from '@/store'
+import MentorAdvice from '@/components/MentorAdvice.vue'
 export default {
+  components: {
+    MentorAdvice
+  },
   created() {
     store.commit('navigation/setTopBarTitle', 'Quiz Categories')
   },
@@ -79,8 +84,8 @@ export default {
     padding-right: 20px;
   }
   #list {
-    margin-bottom: 8px;
-    padding: 8px 8px 8px 0;
+    margin-bottom: -10px;
+    padding: 3px 3px 3px 0;
   }
   #list > v-list-title > div.v-list__tile__content {
     padding: 0 8px;
@@ -96,24 +101,19 @@ export default {
     height: 40px;
     text-align: left;
   }
-  #mentor {
-    border-radius: 50%;
-    height: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50px;
-  }
   #more {
     color: #4F8FCF;
     font-family: cursive;
-    font-size: 20px;
+    font-size: 15px;
     font-style: oblique;
+    margin-bottom: -10px;
+    margin-top: -10px;
     text-align: right;
   }
   #pickCategory {
     color: #4F8FCF;
     font-family: cursive;
     font-style: oblique;
-    font-size: 30px;
+    font-size: 25px;
   }
 </style>

@@ -2,7 +2,7 @@
     <v-container class="text-xs-center" id="container">
         <div style="width: 100%;">
             <div>
-                <h1 id="title">MoneyW!se</h1>
+                <h1 id="title">$W!se</h1>
                 <p>Challenge your financial literacy</p>
             </div>
             <div><v-img :src="require('@/assets/students.png')"></v-img></div>
@@ -11,7 +11,6 @@
                 <router-link to="#" id="signUp" class="white-text">Sign Up</router-link>
             </div>
         </div>
-        
     </v-container>
 </template>
 
