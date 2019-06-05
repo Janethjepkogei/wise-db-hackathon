@@ -1,23 +1,21 @@
 <template>
     <v-container id="container">
         <v-img id="mentor" :src="require('@/assets/zeus.png')" @click="dialog = !dialog"></v-img>
-        <!-- <v-dialog v-model="dialog" hide-overlay>
-            <v-container>
-                Test
-                <v-btn @click="dialog = !dialog">Ok</v-btn>
-            </v-container>
-        </v-dialog> -->
         <v-dialog v-model="dialog" max-width="500px">
-            <v-card>
-                <v-card-title primary-title>
-                    <h3>Message from Mentor Plato</h3>
+            <v-card id="dialogBox">
+                <v-card-title>
+                    <v-avatar><img :src="require('@/assets/zeus.png')"/></v-avatar>
+                    <h3>Message from Plato</h3>
                 </v-card-title>
-
+                <v-divider></v-divider>
                 <v-card-text>
-                    Test
+                    Hi Eddy,<br><br>
+                    You may need to focus on Spending. You have taken fewer (0) quizzes
+                    on this topic! You have also identified Spending as a weak area.
                 </v-card-text>
+                <v-divider></v-divider>
                 <v-card-actions>
-                    <v-btn color="primary" flat @click="dialog=false">Close</v-btn>
+                    <v-btn color="primary" @click="dialog=false">Close</v-btn>
                 </v-card-actions>
             </v-card>
       </v-dialog>
@@ -25,18 +23,8 @@
 </template>
 
 <script>
-import BottomBar from '@/components/BottomBar.vue'
-import TopBar from '@/components/TopBar.vue'
-import store from '@/store'
 
 export default {
-    components: {
-        // BottomBar,
-        TopBar
-    },
-    created() {
-        // store.commit('navigation/setTopBarTitle', 'A Message from Plato')
-    },
     data() {
         return {
             dialog: false
@@ -53,6 +41,12 @@ export default {
     }
     #app > div.v-dialog__content.v-dialog__content--active > div > div {
         background-color: #005A9C;
+    }
+    #dialogBox > div.v-card__actions {
+        justify-content: center;
+    }
+    #dialogBox > div.v-card__title > h3 {
+        padding-left: 15px;
     }
     #mentor {
         border-radius: 50%;
