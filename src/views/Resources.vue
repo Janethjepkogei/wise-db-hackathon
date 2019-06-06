@@ -1,11 +1,15 @@
 <template>
-  <v-container id="categoriesContainer" class="container text-xs-center">
-    <div id="image">
+  <v-container id="categoriesContainer" class="text-xs-center">
+    <div id="image1">
       <v-img height="30%" width="30%" :src="require('@/assets/book.png')"></v-img>
       <h2>Learn</h2>
     </div>
     <v-list v-for="(i, index) in resourcesNames" :key="i.id" class="accent" id="list">
-      <v-list-title avatar style="display: flex;">
+      <v-list-title
+        avatar
+        style="display: flex;"
+        @click="navigate({url: resourcesImages[index].navigate})"
+      >
         <v-list-tile-avatar class="avatar">
           <img :src="resourcesImages[index].avatar">
         </v-list-tile-avatar>
@@ -18,6 +22,8 @@
 
 <script>
 import store from "@/store";
+import { mapActions } from "vuex";
+
 export default {
   data() {
     return {
@@ -44,27 +50,33 @@ export default {
       resourcesImages: [
         {
           avatar: require("@/assets/target.png"),
-          status: "green"
+          status: "green",
+          navigate: "https://www.wise-ny.org/"
         },
         {
           avatar: require("@/assets/spending.png"),
-          status: "red"
+          status: "red",
+          navigate: "https://www.nyse.com/index"
         },
         {
           avatar: require("@/assets/tax.png"),
-          status: "amber"
+          status: "amber",
+          navigate: "https://www.db.com"
         },
         {
           avatar: require("@/assets/education.png"),
-          status: "green"
+          status: "green",
+          navigate: "Blog"
         },
         {
           avatar: require("@/assets/heart.png"),
-          status: "red"
+          status: "red",
+          navigate: "https://www.investopedia.com/"
         },
         {
           avatar: require("@/assets/shield.png"),
-          status: "amber"
+          status: "amber",
+          navigate: "https://en.wikipedia.org/"
         }
       ],
       icons: {
@@ -78,7 +90,9 @@ export default {
         "You have also identified Spending as a weak area."
     };
   },
-  methods: {}
+  methods: {
+    ...mapActions("navigation", ["navigate"])
+  }
 };
 </script>
 
@@ -123,8 +137,8 @@ v-list-title > div.v-list__tile__avatar.avatar {
   font-style: oblique;
   font-size: 25px;
 }
-.image {
-  padding-top: 20px;
-  text-align: center;
+#image1 {
+  text-align: -webkit-center;
+  font-size: x-large;
 }
 </style>
