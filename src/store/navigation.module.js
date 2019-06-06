@@ -1,7 +1,7 @@
 import router from '@/router'
 
 const state = {
-    persona: sessionStorage.persona || '',
+    persona: sessionStorage.getItem('persona') || '',
     topBarTitle: 'Home'
 }
 
