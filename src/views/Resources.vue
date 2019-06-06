@@ -139,5 +139,6 @@ v-list-title > div.v-list__tile__avatar.avatar {
 }
 #image1 {
   text-align: -webkit-center;
+  font-size: x-large;
 }
 </style>
