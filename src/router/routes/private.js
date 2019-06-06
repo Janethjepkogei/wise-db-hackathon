@@ -14,6 +14,7 @@ import PublicResult from "@/views/PublicResult.vue";
 import QuizResult from '@/views/QuizResult.vue';
 import StudentQuizzes from "@/views/StudentQuizzes.vue";
 import Resources from "@/views/Resources.vue";
+import QAForum from "@/views/qa-forum.vue"
 
 const routes = [
   {
@@ -95,6 +96,11 @@ const routes = [
     path: "/resources",
     name: "resources",
     component: Resources
+  },
+  {
+    path: "/QAForum",
+    name: "QAForum",
+    component: QAForum
   }
 ];
 
