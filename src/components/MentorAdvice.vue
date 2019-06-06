@@ -5,13 +5,10 @@
             <v-card id="dialogBox">
                 <v-card-title>
                     <v-avatar><img :src="require('@/assets/zeus.png')"/></v-avatar>
-                    <h3>Message from Plato</h3>
+                    <h3>{{title}}</h3>
                 </v-card-title>
                 <v-divider></v-divider>
-                <v-card-text>
-                    Hi Eddy,<br><br>
-                    You may need to focus on Spending. You have taken fewer (0) quizzes
-                    on this topic! You have also identified Spending as a weak area.
+                <v-card-text v-html="message">
                 </v-card-text>
                 <v-divider></v-divider>
                 <v-card-actions>
@@ -29,7 +26,8 @@ export default {
         return {
             dialog: false
         }
-    }
+    },
+    props: ['title', 'message']
 }
 </script>
 

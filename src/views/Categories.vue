@@ -1,21 +1,21 @@
 <template>
   <v-container id="container" class="text-xs-center">
       <h1 id="pickCategory">Pick a Category</h1>
-      <v-list v-for="(i, index) in categories" :key="index" class="accent" id="list">
+      <v-list v-for="(i, index) in categoryNames" :key="i.id" class="accent" id="list">
         <v-list-title avatar style="display: flex;">
           <v-list-tile-avatar class="avatar">
-            <img :src="i.avatar"/>
+            <img :src="categoryImages[index].avatar"/>
           </v-list-tile-avatar>
           <v-list-tile-content class="secondary">
-            {{i.title}}
+            {{i.name}}
           </v-list-tile-content>
           <v-list-tile-avatar class="secondary">
-            <v-icon :color="i.status">{{icons[i.status]}}</v-icon>
+            <v-icon :color="categoryImages[index].status">{{icons[categoryImages[index].status]}}</v-icon>
           </v-list-tile-avatar>
         </v-list-title>
       </v-list>
       <div id="more">More ></div>
-      <mentor-advice></mentor-advice>
+      <mentor-advice title="A Message from Plato" :message="message"></mentor-advice>
       <!-- <v-img id="mentor" :src="require('@/assets/user.png')"></v-img> -->
   </v-container>
 </template>
@@ -29,14 +29,18 @@ export default {
     MentorAdvice
   },
   created() {
-    store.commit('navigation/setTopBarTitle', 'Quiz Categories')
-    quizService.getQuizCategories().then(data => {
-      console.log(data);
-    })
+    store.commit('navigation/setTopBarTitle', 'Quiz Categories');
+    quizService.getQuizCategories().then(
+      res => {
+        this.categoryNames = res.data;
+        console.log(this.categoryImages[0].avatar);
+      }
+    );
   },
   data () {
     return {
-      categories: [
+      categoryNames: [],
+      categoryImages: [
         {
           avatar: require('@/assets/target.png'),
           title: 'Goal Setting',
@@ -72,8 +76,13 @@ export default {
         red: 'error',
         amber: 'warning',
         green: 'check_circle'
-      }
+      },
+      message: 'Hi Eddy,<br><br>' +
+      'You may need to focus on Spending. You have taken fewer (0) quizzes this topic! ' + 
+      'You have also identified Spending as a weak area.'
     }
+  },
+  methods: {
   }
 }
 </script>
