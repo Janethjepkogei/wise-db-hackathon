@@ -13,8 +13,17 @@
 
     <v-btn
       flat
-      value="favorites"
+      value="recent"
       @click="navigate({url: '/persona'})"
+    >
+      <span>Persona</span>
+      <v-icon>person</v-icon>
+    </v-btn>
+
+    <v-btn
+      flat
+      value="favorites"
+      @click="navigate({url: '/start'})"
     >
       <span>Logout</span>
       <v-icon>power_settings_new</v-icon>
