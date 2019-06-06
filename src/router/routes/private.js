@@ -11,6 +11,7 @@ import TrueFalse from '@/views/questions/TrueFalse.vue'
 import PublicHome from "@/views/PublicHome.vue";
 import PublicQuiz from "@/views/PublicQuiz.vue";
 import PublicResult from "@/views/PublicResult.vue";
+import QuizResult from '@/views/QuizResult.vue';
 
 const routes = [
   {
@@ -47,6 +48,11 @@ const routes = [
     path: '/quizzes/truefalse',
     name: 'truefalse',
     component: TrueFalse
+  },
+  {
+    path: '/quizzes/result',
+    name: 'quizresult',
+    component: QuizResult
   },
   {
     path: "/persona",

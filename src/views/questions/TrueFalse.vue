@@ -12,7 +12,7 @@
             <v-layout row>
                 <v-icon @click="navigate({url: 'multiplechoice'})" class="navigation-arrow">arrow_back</v-icon>
                 <mentor-advice title="Hint from Plato" :message="message"></mentor-advice>
-                <v-icon class="navigation-arrow">arrow_forward</v-icon>
+                <v-icon @click="navigate({url: 'result'})" class="navigation-arrow">arrow_forward</v-icon>
             </v-layout>
         </v-flex>
     </v-container>
