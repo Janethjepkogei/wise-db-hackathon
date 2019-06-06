@@ -1,7 +1,7 @@
 <template>
   <v-app dark>
     <top-bar v-if="loggedIn"></top-bar>
-    <v-content class="secondary">
+    <v-content class="secondary" id="mainContent">
       <router-view/>
     </v-content>
   <bottom-bar v-if="loggedIn"></bottom-bar>
@@ -35,5 +35,8 @@ export default {
 <style>
   .white-text {
     color: white;
+  }
+  #mainContent {
+    height: 700px
   }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <v-container id="container" class="text-xs-center">
+  <v-container id="categoriesContainer" class="container text-xs-center">
       <h1 id="pickCategory">Pick a Category</h1>
       <v-list v-for="(i, index) in categoryNames" :key="i.id" class="accent" id="list">
         <v-list-title avatar style="display: flex;">
@@ -84,7 +84,7 @@ export default {
   v-list-title > div.v-list__tile__avatar.avatar {
     justify-content: center;
   }
-  #container {
+  #categoriesContainer {
     padding-left: 20px;
     padding-right: 20px;
   }

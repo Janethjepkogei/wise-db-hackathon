@@ -1,5 +1,5 @@
 <template>
-    <v-container id="container">
+    <v-container class="container" id="mentorAdviceContainer">
         <v-img id="mentor" :src="require('@/assets/zeus.png')" @click="dialog = !dialog"></v-img>
         <v-dialog v-model="dialog" max-width="500px">
             <v-card id="dialogBox">
@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style scoped>
-    #container {
+    #mentorAdviceContainer {
         margin-top: -10px;
         padding-bottom: 0;
         padding-top: 0;
