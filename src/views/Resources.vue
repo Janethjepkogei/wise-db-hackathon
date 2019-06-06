@@ -1,62 +1,47 @@
 <template>
   <v-container id="categoriesContainer" class="container text-xs-center">
-      <h1 id="pickCategory" class="salsbury">Pick a Category</h1>
-      <v-list v-for="(i, index) in categoryNames" :key="i.id" class="accent" id="list">
-        <v-list-title avatar style="display: flex;" @click="navigate({url: '/quizzes'})">
-          <v-list-tile-avatar class="avatar">
-            <img :src="categoryImages[index].avatar"/>
-          </v-list-tile-avatar>
-          <v-list-tile-content class="salsbury secondary">
-            {{i.name}}
-          </v-list-tile-content>
-          <v-list-tile-avatar class="secondary">
-            <v-icon :color="categoryImages[index].status">{{icons[categoryImages[index].status]}}</v-icon>
-          </v-list-tile-avatar>
-        </v-list-title>
-      </v-list>
-      <div id="more" class="salsbury">More ></div>
-      <mentor-advice title="A Message from Plato" :message="message"></mentor-advice>
+    <div id="image">
+      <v-img height="30%" width="30%" :src="require('@/assets/book.png')"></v-img>
+      <h2>Learn</h2>
+    </div>
+    <v-list v-for="(i, index) in resourcesNames" :key="i.id" class="accent" id="list">
+      <v-list-title avatar style="display: flex;">
+        <v-list-tile-avatar class="avatar">
+          <img :src="resourcesImages[index].avatar">
+        </v-list-tile-avatar>
+        <v-list-tile-content class="secondary">{{i.name}}</v-list-tile-content>
+      </v-list-title>
+    </v-list>
+    <div id="more">More ></div>
   </v-container>
 </template>
 
 <script>
 import store from "@/store";
-import MentorAdvice from "@/components/MentorAdvice.vue";
-import { quizService } from "@/services/quiz.service";
-import { mapActions } from 'vuex'
 export default {
-  components: {
-    MentorAdvice
-  },
-  created() {
-    store.commit("navigation/setTopBarTitle", "Quiz Categories");
-    quizService.getQuizCategories().then(res => {
-      this.categoryNames = res.data;
-    });
-  },
   data() {
     return {
-      categoryNames: [
+      resourcesNames: [
         {
-          name: "Goal Setting"
+          name: "Money Power"
         },
         {
-          name: "Spending"
+          name: "NYSE"
         },
         {
-          name: "Taxation"
+          name: "Deutche Bank"
         },
         {
-          name: "Cost of College"
+          name: "W!se blog"
         },
         {
-          name: "Charitable Giving"
+          name: "Investopedia"
         },
         {
-          name: "GENERAL"
+          name: "Wikipedia"
         }
       ],
-      categoryImages: [
+      resourcesImages: [
         {
           avatar: require("@/assets/target.png"),
           status: "green"
@@ -93,10 +78,8 @@ export default {
         "You have also identified Spending as a weak area."
     };
   },
-  methods: {
-      ...mapActions('navigation', ['navigate'])
-  }
-}
+  methods: {}
+};
 </script>
 
 <style>
@@ -119,6 +102,7 @@ v-list-title > div.v-list__tile__avatar.avatar {
 }
 #list > v-list-title > div.secondary {
   align-items: center;
+  font-family: cursive;
   font-size: 20px;
   font-style: oblique;
   height: 40px;
@@ -126,6 +110,7 @@ v-list-title > div.v-list__tile__avatar.avatar {
 }
 #more {
   color: #4f8fcf;
+  font-family: cursive;
   font-size: 15px;
   font-style: oblique;
   margin-bottom: -10px;
@@ -134,7 +119,12 @@ v-list-title > div.v-list__tile__avatar.avatar {
 }
 #pickCategory {
   color: #4f8fcf;
+  font-family: cursive;
   font-style: oblique;
   font-size: 25px;
+}
+.image {
+  padding-top: 20px;
+  text-align: center;
 }
 </style>

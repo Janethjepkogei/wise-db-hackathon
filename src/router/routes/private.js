@@ -13,6 +13,7 @@ import PublicQuiz from "@/views/PublicQuiz.vue";
 import PublicResult from "@/views/PublicResult.vue";
 import QuizResult from '@/views/QuizResult.vue';
 import StudentQuizzes from "@/views/StudentQuizzes.vue";
+import Resources from "@/views/Resources.vue";
 
 const routes = [
   {
@@ -89,6 +90,11 @@ const routes = [
     path: "/publicResult",
     name: "publicResult",
     component: PublicResult
+  },
+  {
+    path: "/resources",
+    name: "resources",
+    component: Resources
   }
 ];
 

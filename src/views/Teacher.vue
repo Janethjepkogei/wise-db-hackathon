@@ -1,14 +1,14 @@
 <template>
     <v-container>
-        <div class="mentor" @click="navigate({url: '/categories'})">
+        <div class="mentor">
             <v-img height="50%" width="50%" :src="require('@/assets/mentor.png')"></v-img>
-            <h2>Mentor</h2>
+            <h2>Teacher</h2>
         </div>
         <div id="status">
             10 Mentees / 5 Waiting
         </div>
         <div id="actions">
-            <div id="quiz" class="button">
+            <div id="quiz" class="button" @click="navigate({url: '/teacher/quizzes'})">
                 <v-img :src="require('@/assets/exam.png')"></v-img>
                 <h3>Quiz</h3>
             </div>
@@ -23,6 +23,22 @@
         </div>
     </v-container>
 </template>
+
+<script>
+import { mapActions } from 'vuex'
+import store from '@/store'
+
+export default {
+    components: {
+    },
+    created() {
+        store.commit('navigation/setTopBarTitle', 'Teacher')
+    },
+    methods: {
+        ...mapActions('navigation', ['navigate'])
+    }
+}
+</script>
 
 <style>
     .button {
