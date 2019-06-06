@@ -53,7 +53,7 @@ export default {
           name: "Charitable Giving"
         },
         {
-          name: "GENERAL"
+          name: "General"
         }
       ],
       categoryImages: [
