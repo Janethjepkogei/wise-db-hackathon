@@ -1,5 +1,5 @@
 <template>
-  <quiz-card cardTitle="hello" cardText="there">
+  <quiz-card cardTitle="Graduate Dollar" cardText="there" v-bind:cardImage="require('@/assets/graduation2.jpg')">
   </quiz-card>
 </template>
 
