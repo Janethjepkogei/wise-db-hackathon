@@ -20,6 +20,9 @@ import { mapActions } from 'vuex'
 import store from '@/store'
 
 export default {
+    created() {
+        store.commit('navigation/setTopBarTitle', 'Start')
+    },
     methods: {
         ...mapActions('navigation', ['navigate']),
         login() {

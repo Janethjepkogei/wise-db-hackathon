@@ -1,10 +1,10 @@
 <template>
   <v-app dark>
-    <top-bar v-if="loggedIn"></top-bar>
+    <top-bar v-if="topBarTitle !== 'Start'"></top-bar>
     <v-content class="secondary" id="mainContent">
       <router-view/>
     </v-content>
-  <bottom-bar v-if="loggedIn"></bottom-bar>
+  <bottom-bar v-if="topBarTitle !== 'Start'"></bottom-bar>
   </v-app>
 </template>
 
@@ -21,7 +21,8 @@ export default {
   },
   computed: {
     ...mapState({
-      loggedIn: state => state.account.loggedIn
+      loggedIn: state => state.account.loggedIn,
+      topBarTitle: state => state.navigation.topBarTitle
     })
   },
   data () {
