@@ -9,9 +9,9 @@ const mutations = {
     setTopBarTitle(state, title) {
         state.topBarTitle = title;
     },
-    setPersona(state, name) {
+    setPersona({}, name) {
         localStorage.setItem('persona', name)
-        // console.log(sessionStorage.getItem('persona'))
+        console.log(localStorage.getItem('persona'))
     }
 }
 
