@@ -8,7 +8,7 @@
       <v-list-title
         avatar
         style="display: flex;"
-        @click="navigate({url: resourcesImages[index].navigate})"
+        @click="nav(resourcesImages[index].navigate)"
       >
         <v-list-tile-avatar class="avatar">
           <img :src="resourcesImages[index].avatar">
@@ -91,7 +91,10 @@ export default {
     };
   },
   methods: {
-    ...mapActions("navigation", ["navigate"])
+    ...mapActions("navigation", ["navigate"]),
+    nav(url) {
+      window.location = url;
+    }
   }
 };
 </script>

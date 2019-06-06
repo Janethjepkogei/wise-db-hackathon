@@ -62,6 +62,6 @@ export default {
         margin-top: 15px;
     }
     #wisephoto {
-        margin: 70px 0;
+        margin: 70px 0 55px 0;
     }
 </style>
