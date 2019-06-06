@@ -26,7 +26,13 @@
 </template>
 
 <script>
+
+import store from '@/store'
+
 export default {
+  created() {
+    store.commit('navigation/setTopBarTitle', 'Persona')
+  },
   data() {
     return {
       personas: [

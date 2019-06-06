@@ -11,7 +11,7 @@
             <div><v-img :src="require('@/assets/students.png')"></v-img></div>
             <div id="buttons">
                 <v-btn id="login" class="primary" @click="login()">Login</v-btn>
-                <router-link to="#" id="signUp" class="white-text">Sign Up</router-link>
+                <v-btn id="signUp" class="primary" @click="signUp()">Sign Up</v-btn>
             </div>
         </div>
     </v-container>
@@ -27,6 +27,10 @@ export default {
         login() {
             store.commit("account/setLoggedIn", true);
             this.navigate({url: '/home', title: 'Home'})
+        },
+        signUp() {
+            store.commit("account/setLoggedIn", true);
+            this.navigate({url: '/persona', title: 'Persona'})
         }
     }
 }
