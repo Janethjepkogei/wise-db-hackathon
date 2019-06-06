@@ -1,9 +1,9 @@
 import request from '@/services/common.service.js'
 
-const baseUrl = 'https://dollarwise.eastus.cloudapp.azure.com:8090/quiz/'
+const baseUrl = 'https://dollarwise.eastus.cloudapp.azure.com:8090/quiz'
 
 function getQuizCategories() {
-    request.get(baseUrl + 'category');
+    return request.get(baseUrl + '/category');
 }
 
 export const quizService = {
