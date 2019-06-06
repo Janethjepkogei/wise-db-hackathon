@@ -28,6 +28,7 @@
 <script>
 
 import store from '@/store'
+import { mapActions } from 'vuex'
 
 export default {
   created() {
@@ -58,6 +59,9 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+        ...mapActions('navigation', ['navigate'])
   }
 };
 </script>
