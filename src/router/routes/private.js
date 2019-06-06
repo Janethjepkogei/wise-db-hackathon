@@ -1,7 +1,7 @@
 import Categories from "@/views/Categories.vue";
 import HelloWorld from "@/components/HelloWorld.vue";
 import Home from "@/views/Home.vue";
-// import TeacherQuizzes from "@/views/TeacherQuizzes.vue";
+import TeacherQuizzes from "@/views/TeacherQuizzes.vue";
 import Teacher from "@/views/Teacher.vue";
 import MultipleChoice from "@/views/questions/MultipleChoice.vue";
 import QuizCreation from "@/views/QuizCreation.vue";
@@ -12,7 +12,7 @@ import PublicHome from "@/views/PublicHome.vue";
 import PublicQuiz from "@/views/PublicQuiz.vue";
 import PublicResult from "@/views/PublicResult.vue";
 import QuizResult from '@/views/QuizResult.vue';
-// import StudentQuizzes from "@/views/StudentQuizzes.vue";
+import StudentQuizzes from "@/views/StudentQuizzes.vue";
 
 const routes = [
   {
@@ -30,11 +30,11 @@ const routes = [
     name: "home",
     component: Home
   },
-  // {
-  //   path: "/teacher/quizzes",
-  //   name: "quizzes",
-  //   component: TeacherQuizzes
-  // },
+  {
+    path: "/teacher/quizzes",
+    name: "quizzes",
+    component: TeacherQuizzes
+  },
   {
     path: "/teacher",
     name: "teacher",
@@ -45,11 +45,11 @@ const routes = [
     name: "multiplechoice",
     component: MultipleChoice
   },
-  // {
-  //   path: "/quizzes",
-  //   name: "quizzes",
-  //   component: StudentQuizzes
-  // },
+  {
+    path: "/quizzes",
+    name: "quizzes",
+    component: StudentQuizzes
+  },
   {
     path: '/quizzes/truefalse',
     name: 'truefalse',
