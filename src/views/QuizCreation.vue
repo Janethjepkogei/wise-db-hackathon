@@ -1,6 +1,6 @@
 <template>
-	<v-container class="container">
-		<v-img style="margin-left: auto;" :src="require('@/assets/exam.png')"></v-img>
+	<v-container>
+		<v-img :src="require('@/assets/exam.png')"></v-img>
 		<v-flex xs12>
           <v-text-field
             label="Quiz Name"

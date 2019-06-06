@@ -1,23 +1,18 @@
 <template>
     <v-container id="questionContainer">
-        <v-img :src="require('@/assets/mortgage.png')"></v-img>
+        <v-img :src="require('@/assets/piggy-bank.jpg')"></v-img>
         <div class="question">
-            What affects the amount of interest that you would
-            pay on a loan?
+            Retirement income paid by a company is called a Pension.
         </div>
-        <v-list v-for="(choice,index) in answerChoices" :key="index" class="answerChoices"
-                :class="index === selected ? 'selected' : ''">
-            <v-list-tile id="choice" @click="selected = index">
-                <v-list-tile-content>
-                    {{choice}}
-                </v-list-tile-content>
-            </v-list-tile>
-        </v-list>
+        <v-layout class="true-false">
+            <v-btn flat class="answerChoices" :class="'T' === selected ? 'selected' : ''" @click="selected = 'T'">True</v-btn>
+            <v-btn flat class="answerChoices" :class="'F' === selected ? 'selected' : ''" @click="selected = 'F'">False</v-btn>
+        </v-layout>
         <v-flex id="questionNavigation">
             <v-layout row>
-                <v-icon class="navigation-arrow">arrow_back</v-icon>
+                <v-icon @click="navigate({url: 'multiplechoice'})" class="navigation-arrow">arrow_back</v-icon>
                 <mentor-advice title="Hint from Plato" :message="message"></mentor-advice>
-                <v-icon @click="navigate({url: 'truefalse'})" class="navigation-arrow">arrow_forward</v-icon>
+                <v-icon class="navigation-arrow">arrow_forward</v-icon>
             </v-layout>
         </v-flex>
     </v-container>
@@ -68,9 +63,14 @@ export default {
         font-size: 20px;
         margin-top: 15px;
         margin-bottom: 15px;
+        justify-content: center;
+        text-align: center;
     }
     .selected {
         background-color: #17395b !important;
+    }
+    .true-false {
+        justify-content: center;
     }
     #backButton > div {
         height: 25%;

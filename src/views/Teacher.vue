@@ -18,7 +18,7 @@
             </div>
             <div id="learn" class="button">
             	<v-img :src="require('@/assets/book.png')"></v-img>
-            	<h3>Learn</h3>
+                <h3>Learn</h3>
             </div>
         </div>
     </v-container>

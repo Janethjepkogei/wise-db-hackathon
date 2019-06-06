@@ -7,6 +7,7 @@ import MultipleChoice from '@/views/questions/MultipleChoice.vue'
 import QuizCreation from '@/views/QuizCreation.vue'
 import Persona from "@/views/Persona.vue";
 import Pro from '@/views/Pro.vue'
+import TrueFalse from '@/views/questions/TrueFalse.vue'
 
 const routes = [
   {
@@ -38,6 +39,11 @@ const routes = [
     path: "/quizzes/multiplechoice",
     name: "multiplechoice",
     component: MultipleChoice
+  },
+  {
+    path: '/quizzes/truefalse',
+    name: 'truefalse',
+    component: TrueFalse
   },
   {
     path: "/persona",
