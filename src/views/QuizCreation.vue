@@ -27,17 +27,28 @@
       		</v-flex>
   		</v-layout>
   		<v-btn style="margin-left: 0px;" color="info">Upload Pictures</v-btn>
-  		<v-img style="margin-left: 20px; float: right; margin-top: 100px;" height="15%" width="15%" :src="require('@/assets/checked.png')"></v-img>
-  		<v-img style="margin-left: auto; float: right; margin-top: 100px;" height="15%" width="15%" :src="require('@/assets/cancel.png')"></v-img>
+  		<v-img style="margin-left: 20px; float: right; margin-top: 100px;" height="15%" width="15%" :src="require('@/assets/checked.png')" @click="navigate({url: '/teacher/quizzes'})"></v-img>
+  		<v-img style="margin-left: auto; float: right; margin-top: 100px;" height="15%" width="15%" :src="require('@/assets/cancel.png')" @click="navigate({url: '/teacher'})"></v-img>
   	</div>
 	</v-container>
 </template>
 
 <script>
-  export default {
+import { mapActions } from 'vuex'
+import store from '@/store'
+
+export default {
+    components: {
+    },
+    created() {
+        store.commit('navigation/setTopBarTitle', 'Quiz Creation')
+    },
+    methods: {
+        ...mapActions('navigation', ['navigate'])
+    },
     data: () => ({
       difficulty: ['Easy', 'Medium', 'Hard'],
       distribution: ['Mentee', 'Public']
     })
-  }
+}
 </script>

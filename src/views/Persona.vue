@@ -50,7 +50,7 @@ export default {
         {
           avatar: require("@/assets/zeus.png"),
           title: "Teacher",
-          navigate: "/Teacher"
+          navigate: "/teacher"
         },
         {
           avatar: require("@/assets/aphrodite.png"),
