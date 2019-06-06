@@ -51,7 +51,7 @@ export default {
         {
           avatar: require("@/assets/target.png"),
           status: "green",
-          navigate: "https://www.wise-ny.org/"
+          navigate: "http://moneypower.org"
         },
         {
           avatar: require("@/assets/spending.png"),
