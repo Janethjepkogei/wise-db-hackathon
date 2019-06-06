@@ -9,11 +9,11 @@
             Rank 41 / 2600 points
         </div>
         <div id="actions">
-            <div id="learn" class="button">
+            <div id="learn" class="button" @click="navigate({url: '/resources'})">
                 <v-img :src="require('@/assets/book.png')"></v-img>
                 <h3>Learn</h3>
             </div>
-            <div id="ask" class="button">
+            <div id="ask" class="button" @click="navigate({url: '/QAForum'})">
                 <v-img :src="require('@/assets/conversation.png')"></v-img>
                 <h3>Ask</h3>
             </div>

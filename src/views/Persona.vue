@@ -64,7 +64,7 @@ export default {
         {
           avatar: require("@/assets/aphrodite.png"),
           title: "Public",
-          navigate: "PublicHome"
+          navigate: "Public"
         }
       ]
     };

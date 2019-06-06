@@ -1,6 +1,6 @@
 <template>
   <v-container class="text-xs-center">
-    <div id="takeQuiz" @click="navigate({url: '/PublicResult'})">
+    <div id="takeQuiz" @click="navigate({url: '/quizzes/multiplechoicepublic'})">
       <v-img height="40%" width="40%" :src="require('@/assets/zeus.png')"></v-img>
       <h2>Well,</h2>
       <h2>Financial Literacy has not been the our greatest of skills. That is why #W!se is here to help you. Let us start with a few questions.</h2>

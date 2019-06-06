@@ -1,9 +1,13 @@
 <template>
     <v-container id="questionContainer">
-        <v-img id="mcimage" size="50%" :src="require('@/assets/mortgage.png')"></v-img>
+        <!-- <v-img :src="require('@/assets/mortgage.png')"></v-img> -->
         <div class="question">
-            What affects the amount of interest that you would
-            pay on a loan?
+            Suppose you had $100 in a
+            savings account and the interest
+            rate was 2% per year.
+            After five years, how much would
+            you have in the account if you
+            left the money to grow?
         </div>
         <v-list v-for="(choice,index) in answerChoices" :key="index" class="answerChoices"
                 :class="index === selected ? 'selected' : ''">
@@ -13,11 +17,16 @@
                 </v-list-tile-content>
             </v-list-tile>
         </v-list>
+        <div class="question">
+            At any time, if you need help,
+            summon me by clicking on my
+            picture below
+        </div>
         <v-flex id="questionNavigation">
             <v-layout row>
                 <v-icon class="navigation-arrow">arrow_back</v-icon>
                 <mentor-advice title="Hint from Plato" :message="message"></mentor-advice>
-                <v-icon @click="navigate({url: 'truefalse'})" class="navigation-arrow">arrow_forward</v-icon>
+                <v-icon @click="navigate({url: 'publicquizresult'})" class="navigation-arrow">arrow_forward</v-icon>
             </v-layout>
         </v-flex>
     </v-container>
@@ -32,15 +41,14 @@ export default {
         MentorAdvice
     },
     created() {
-        store.commit('navigation/setTopBarTitle', 'Debt Quiz')
+        store.commit('navigation/setTopBarTitle', 'Teaser Quiz')
     },
     data() {
         return {
             answerChoices: [
-                'Your credit rating',
-                'How much you borrow',
-                'Time to repay the loan',
-                'All of the above'
+                'More than $102',
+                'Less than $102',
+                'Exactly $102'
             ],
             message: 'Remember the formula that you used in middle school arithmetic to ' +
                 'calculate interest? Add it to a real life parameter such as credit worthiness!',

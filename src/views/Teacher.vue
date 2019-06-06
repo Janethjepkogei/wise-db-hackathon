@@ -12,10 +12,10 @@
                 <v-img :src="require('@/assets/exam.png')"></v-img>
                 <h3>Quiz</h3>
             </div>
-            <div id="discuss" class="button">
+            <!-- <div id="discuss" class="button">
                 <v-img :src="require('@/assets/discussion.png')"></v-img>
                 <h3>Ask</h3>
-            </div>
+            </div> -->
             <div id="learn" class="button">
             	<v-img :src="require('@/assets/book.png')"></v-img>
                 <h3>Learn</h3>

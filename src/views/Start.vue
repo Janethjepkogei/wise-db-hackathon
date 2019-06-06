@@ -2,16 +2,14 @@
     <v-container class="container text-xs-center">
         <div style="width: 100%;">
             <div>
-                <!-- <h1 id="title">$W!se</h1> -->
-                <v-img :src="require('@/assets/wise-title.png')"  ></v-img>
-                <!-- <p>Challenge your financial literacy</p> -->
+                <v-img id="wiselogo" :src="require('@/assets/wise-title.png')"  ></v-img>
                 <div class="title font-weight-regular font-italic">Challenge your Financial Literacy</div>
             </div>
             <p>
-            <div><v-img :src="require('@/assets/students.png')"></v-img></div>
+            <div><v-img id="wisephoto" :src="require('@/assets/students.png')"></v-img></div>
             <div id="buttons">
-                <v-btn id="login" class="primary" @click="login()">Login</v-btn>
-                <v-btn id="signUp" class="primary" @click="signUp()">Sign Up</v-btn>
+                <v-btn id="signUp" class="primary" @click="signUp()">Start Here</v-btn>
+                <v-btn flat id="login" class="secondary" @click="login()">Login</v-btn>
             </div>
         </div>
     </v-container>
@@ -26,11 +24,11 @@ export default {
         ...mapActions('navigation', ['navigate']),
         login() {
             store.commit("account/setLoggedIn", true);
-            this.navigate({url: '/home', title: 'Home'})
+            this.navigate({url: '/home'})
         },
         signUp() {
             store.commit("account/setLoggedIn", true);
-            this.navigate({url: '/persona', title: 'Persona'})
+            this.navigate({url: '/persona'})
         }
     }
 }
@@ -52,11 +50,18 @@ export default {
     #login {
         width: 'fill-content';
     }
-    #signUp {
-        text-decoration: none;
+    #login {
+        text-decoration: underline;
     }
     #title {
         font-family: 'Futura', 'Trebuchet MS', Arial, sans-serif;
         font-size: 50px;
+    }
+    #wiselogo {
+        height: 150px;
+        margin-top: 15px;
+    }
+    #wisephoto {
+        margin: 70px 0;
     }
 </style>

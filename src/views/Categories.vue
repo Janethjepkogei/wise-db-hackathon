@@ -15,7 +15,7 @@
         </v-list-title>
       </v-list>
       <div id="more" class="salsbury">More ></div>
-      <mentor-advice title="A Message from Plato" :message="message"></mentor-advice>
+      <mentor-advice title="Message from Plato" :message="message"></mentor-advice>
   </v-container>
 </template>
 

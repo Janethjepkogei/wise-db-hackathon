@@ -1,5 +1,5 @@
 <template>
-	<v-container >
+	<v-container id="quizCreationContainer">
 		<div style="margin-left: 10px; margin-right: 10px;">
 		<v-img style="margin-left: auto; margin-right: auto; margin-top:" height="100%" width="35%" :src="require('@/assets/exam.png')"></v-img>
 		<v-flex xs12>
@@ -15,9 +15,9 @@
         		></v-select>
       		</v-flex>
   		</v-layout>
-  		Questions
+  		<span style="font-size: 20px;">Questions</span>
   		<v-btn color="info">New</v-btn>
-  		<v-btn color="info">From Database</v-btn>
+  		<v-btn color="info">Database</v-btn>
   		<v-layout wrap align-center>
 	        <v-flex xs12 sm6 d-flex>
         		<v-select
@@ -52,3 +52,9 @@ export default {
     })
 }
 </script>
+
+<style>
+	#quizCreationContainer label {
+		font-size: 20px;
+	}
+</style>
