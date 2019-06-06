@@ -2,9 +2,12 @@
     <v-container class="text-xs-center" id="container">
         <div style="width: 100%;">
             <div>
-                <h1 id="title">$W!se</h1>
-                <p>Challenge your financial literacy</p>
+                <!-- <h1 id="title">$W!se</h1> -->
+                <v-img :src="require('@/assets/wise-title.png')"  ></v-img>
+                <!-- <p>Challenge your financial literacy</p> -->
+                <div class="title font-weight-regular font-italic">Challenge your Financial Literacy</div>
             </div>
+            <p>
             <div><v-img :src="require('@/assets/students.png')"></v-img></div>
             <div id="buttons">
                 <v-btn id="login" class="primary" @click="login()">Login</v-btn>
