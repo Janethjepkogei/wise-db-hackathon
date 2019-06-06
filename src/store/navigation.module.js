@@ -11,7 +11,7 @@ const mutations = {
 }
 
 const actions = {
-    navigate({commit}, data) {
+    navigate({}, data) {
         router.push(data.url);
     }
 }

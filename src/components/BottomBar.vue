@@ -6,7 +6,7 @@
       color="active"
       flat
       value="recent"
-      @click="navigate({url: '/home'})"
+      @click="navigate({url: '/persona'})"
     >
       <span>Home</span>
       <v-icon>home</v-icon>
@@ -17,17 +17,8 @@
       flat
       value="favorites"
     >
-      <span>Favorites</span>
+      <span>Logout</span>
       <v-icon>favorite</v-icon>
-    </v-btn>
-
-    <v-btn
-      color="active"
-      flat
-      value="nearby"
-    >
-      <span>Nearby</span>
-      <v-icon>place</v-icon>
     </v-btn>
   </v-bottom-nav>
 </template>

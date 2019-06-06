@@ -1,20 +1,21 @@
 <template>
   <v-container id="categoriesContainer" class="container text-xs-center">
-    <h1 id="pickCategory" class="salsbury">Pick a Category</h1>
-    <v-list v-for="(i, index) in categoryNames" :key="i.id" class="accent" id="list">
-      <v-list-title avatar style="display: flex;">
-        <v-list-tile-avatar class="avatar">
-          <img :src="categoryImages[index].avatar">
-        </v-list-tile-avatar>
-        <v-list-tile-content class="salsbury secondary">{{i.name}}</v-list-tile-content>
-        <v-list-tile-avatar class="secondary">
-          <v-icon :color="categoryImages[index].status">{{icons[categoryImages[index].status]}}</v-icon>
-        </v-list-tile-avatar>
-      </v-list-title>
-    </v-list>
-    <div id="more" class="salsbury">More ></div>
-    <mentor-advice title="A Message from Plato" :message="message"></mentor-advice>
-    <!-- <v-img id="mentor" :src="require('@/assets/user.png')"></v-img> -->
+      <h1 id="pickCategory" class="salsbury">Pick a Category</h1>
+      <v-list v-for="(i, index) in categoryNames" :key="i.id" class="accent" id="list">
+        <v-list-title avatar style="display: flex;" @click="navigate({url: '/quizzes'})">
+          <v-list-tile-avatar class="avatar">
+            <img :src="categoryImages[index].avatar"/>
+          </v-list-tile-avatar>
+          <v-list-tile-content class="salsbury secondary">
+            {{i.name}}
+          </v-list-tile-content>
+          <v-list-tile-avatar class="secondary">
+            <v-icon :color="categoryImages[index].status">{{icons[categoryImages[index].status]}}</v-icon>
+          </v-list-tile-avatar>
+        </v-list-title>
+      </v-list>
+      <div id="more" class="salsbury">More ></div>
+      <mentor-advice title="A Message from Plato" :message="message"></mentor-advice>
   </v-container>
 </template>
 
@@ -22,6 +23,7 @@
 import store from "@/store";
 import MentorAdvice from "@/components/MentorAdvice.vue";
 import { quizService } from "@/services/quiz.service";
+import { mapActions } from 'vuex'
 export default {
   components: {
     MentorAdvice
@@ -91,8 +93,10 @@ export default {
         "You have also identified Spending as a weak area."
     };
   },
-  methods: {}
-};
+  methods: {
+      ...mapActions('navigation', ['navigate'])
+  }
+}
 </script>
 
 <style>
