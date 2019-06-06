@@ -1,7 +1,7 @@
 <template>
   <v-container id="categoriesContainer" class="container text-xs-center">
       <h1 id="pickCategory" class="salsbury">Pick a Category</h1>
-      <v-list v-for="(i, index) in categoryNames" :key="i.id" class="accent" id="list">
+      <v-list v-for="(i, index) in categoryNames" :key="i.id" class="accent" id="list" @click="navigate({url: 'quizzes'})">
         <v-list-title avatar style="display: flex;">
           <v-list-tile-avatar class="avatar">
             <img :src="categoryImages[index].avatar"/>
@@ -24,6 +24,8 @@
 import store from '@/store'
 import MentorAdvice from '@/components/MentorAdvice.vue'
 import {quizService} from '@/services/quiz.service'
+import { mapActions } from 'vuex'
+
 export default {
   components: {
     MentorAdvice
@@ -76,6 +78,7 @@ export default {
     }
   },
   methods: {
+      ...mapActions('navigation', ['navigate'])
   }
 }
 </script>

@@ -40,22 +40,22 @@ export default {
         {
           avatar: require("@/assets/athena.png"),
           title: "Student",
-          navigate: ""
+          navigate: "home"
         },
         {
           avatar: require("@/assets/greek1.png"),
           title: "Certified Pro",
-          navigate: "/Pro"
+          navigate: "Pro"
         },
         {
           avatar: require("@/assets/zeus.png"),
           title: "Teacher",
-          navigate: "/Teacher"
+          navigate: "Teacher"
         },
         {
           avatar: require("@/assets/aphrodite.png"),
           title: "Public",
-          navigate: "/PublicHome"
+          navigate: "PublicHome"
         }
       ]
     };

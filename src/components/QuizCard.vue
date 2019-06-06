@@ -1,7 +1,7 @@
 <template>
   <v-layout mt-3 ml-3 mr-3>
     <v-flex xs12 sm6 offset-sm3>
-      <v-card>
+      <v-card @click="navigate({url: '/quizzes/multiplechoice'})">
         <v-img
           :src="cardImage"
           aspect-ratio="2.75"
@@ -22,7 +22,11 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
   export default {
-    props: ['cardTitle','cardText1','cardText2','cardImage','likes','comments']
+    props: ['cardTitle','cardText1','cardText2','cardImage','likes','comments'],
+    methods: {
+        ...mapActions('navigation', ['navigate'])
+    }
   }
 </script>
