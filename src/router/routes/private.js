@@ -11,12 +11,9 @@ import TrueFalse from '@/views/questions/TrueFalse.vue'
 import PublicHome from "@/views/PublicHome.vue";
 import PublicQuiz from "@/views/PublicQuiz.vue";
 import PublicResult from "@/views/PublicResult.vue";
-<<<<<<< HEAD
 import QuizResult from '@/views/QuizResult.vue';
 import StudentQuizzes from "@/views/StudentQuizzes.vue";
-=======
 import Resources from "@/views/Resources.vue";
->>>>>>> resources
 
 const routes = [
   {
