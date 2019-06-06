@@ -1,12 +1,12 @@
 <template>
   <v-container id="categoriesContainer" class="container text-xs-center">
-      <h1 id="pickCategory">Pick a Category</h1>
+      <h1 id="pickCategory" class="salsbury">Pick a Category</h1>
       <v-list v-for="(i, index) in categoryNames" :key="i.id" class="accent" id="list">
         <v-list-title avatar style="display: flex;">
           <v-list-tile-avatar class="avatar">
             <img :src="categoryImages[index].avatar"/>
           </v-list-tile-avatar>
-          <v-list-tile-content class="secondary">
+          <v-list-tile-content class="salsbury secondary">
             {{i.name}}
           </v-list-tile-content>
           <v-list-tile-avatar class="secondary">
@@ -14,7 +14,7 @@
           </v-list-tile-avatar>
         </v-list-title>
       </v-list>
-      <div id="more">More ></div>
+      <div id="more" class="salsbury">More ></div>
       <mentor-advice title="A Message from Plato" :message="message"></mentor-advice>
       <!-- <v-img id="mentor" :src="require('@/assets/user.png')"></v-img> -->
   </v-container>
@@ -100,7 +100,6 @@ export default {
   }
   #list > v-list-title > div.secondary {
     align-items: center;
-    font-family: cursive;
     font-size: 20px;
     font-style: oblique;
     height: 40px;
@@ -108,7 +107,6 @@ export default {
   }
   #more {
     color: #4F8FCF;
-    font-family: cursive;
     font-size: 15px;
     font-style: oblique;
     margin-bottom: -10px;
@@ -117,7 +115,6 @@ export default {
   }
   #pickCategory {
     color: #4F8FCF;
-    font-family: cursive;
     font-style: oblique;
     font-size: 25px;
   }

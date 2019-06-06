@@ -33,10 +33,14 @@ export default {
 </script>
 
 <style>
+  .salsbury {
+    font-family: 'salsbury', sans-serif;
+  }
   .white-text {
     color: white;
   }
   #mainContent {
     height: 700px
   }
+  
 </style>

@@ -6,7 +6,8 @@ import Teacher from "@/views/Teacher.vue";
 import MultipleChoice from "@/views/questions/MultipleChoice.vue";
 import QuizCreation from "@/views/QuizCreation.vue";
 import Persona from "@/views/Persona.vue";
-import Pro from "@/views/Pro.vue";
+import Pro from '@/views/Pro.vue'
+import TrueFalse from '@/views/questions/TrueFalse.vue'
 import PublicHome from "@/views/PublicHome.vue";
 import PublicQuiz from "@/views/PublicQuiz.vue";
 import PublicResult from "@/views/PublicResult.vue";
@@ -47,6 +48,11 @@ const routes = [
     path: "/quizzes",
     name: "quizzes",
     component: StudentQuizzes
+  },
+  {
+    path: '/quizzes/truefalse',
+    name: 'truefalse',
+    component: TrueFalse
   },
   {
     path: "/persona",

@@ -5,11 +5,10 @@
             <v-card id="dialogBox">
                 <v-card-title>
                     <v-avatar><img :src="require('@/assets/zeus.png')"/></v-avatar>
-                    <h3>{{title}}</h3>
+                    <h3 class="mentor-title">{{title}}</h3>
                 </v-card-title>
                 <v-divider></v-divider>
-                <v-card-text v-html="message">
-                </v-card-text>
+                <v-card-text v-html="message" class="mentor-advice"></v-card-text>
                 <v-divider></v-divider>
                 <v-card-actions>
                     <v-btn color="primary" @click="dialog=false">Close</v-btn>
@@ -32,6 +31,12 @@ export default {
 </script>
 
 <style scoped>
+    .mentor-advice {
+        font-size: 20px;
+    }
+    .mentor-title {
+        font-size: 25px;
+    }
     #mentorAdviceContainer {
         margin-top: -10px;
         padding-bottom: 0;
@@ -48,13 +53,10 @@ export default {
     }
     #mentor {
         border-radius: 50%;
-        height: 50px;
+        height: 75px;
         margin-left: auto;
         margin-right: auto;
-        width: 50px;
-    }
-    #title {
-        font-size: 20px;
+        width: 75px;
     }
     #topBar {
         position: sticky;

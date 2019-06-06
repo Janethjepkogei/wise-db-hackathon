@@ -3,9 +3,9 @@
         <countdown></countdown>
         <div id="takeQuiz" @click="navigate({url: '/categories'})">
             <v-img height="50%" width="50%" :src="require('@/assets/test.png')"></v-img>
-            <h2>Take Quiz</h2>
+            <h2 class='salsbury'>Take Quiz</h2>
         </div>
-        <div id="rank">
+        <div id="rank" class="salsbury">
             Rank 41 / 2600 points
         </div>
         <div id="actions">
@@ -66,7 +66,6 @@ export default {
         margin-top: 25px;
     }
     #takeQuiz > h2 {
-        font-family: 'Times New Roman', Times, serif;
         font-size: 45px;
     }
 </style>
