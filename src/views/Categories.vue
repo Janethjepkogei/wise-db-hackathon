@@ -33,7 +33,6 @@ export default {
     quizService.getQuizCategories().then(
       res => {
         this.categoryNames = res.data;
-        console.log(this.categoryImages[0].avatar);
       }
     );
   },
@@ -43,32 +42,26 @@ export default {
       categoryImages: [
         {
           avatar: require('@/assets/target.png'),
-          title: 'Goal Setting',
           status: 'green'
         },
         {
           avatar: require('@/assets/spending.png'),
-          title: 'Spending',
           status: 'red'
         },
         {
           avatar: require('@/assets/tax.png'),
-          title: 'Taxation',
           status: 'amber'
         },
         {
           avatar: require('@/assets/education.png'),
-          title: 'Cost of College',
           status: 'green'
         },
         {
           avatar: require('@/assets/heart.png'),
-          title: 'Charitable Giving',
           status: 'red'
         },
         {
           avatar: require('@/assets/shield.png'),
-          title: 'General',
           status: 'amber'
         }
       ],
@@ -88,7 +81,6 @@ export default {
 </script>
 
 <style>
-  #app > div.application--wrap > main > div > div > div
   v-list-title > div.v-list__tile__avatar.avatar {
     justify-content: center;
   }
