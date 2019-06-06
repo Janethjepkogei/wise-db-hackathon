@@ -5,6 +5,7 @@ import Quizzes from "@/views/Quizzes.vue";
 import Teacher from "@/views/Teacher.vue";
 import MultipleChoice from "@/views/questions/MultipleChoice.vue";
 import Persona from "@/views/Persona.vue";
+import Pro from '@/views/Pro.vue'
 
 const routes = [
   {
@@ -41,7 +42,12 @@ const routes = [
     path: "/persona",
     name: "persona",
     component: Persona
-  }
+  },
+  {
+    path: '/pro',
+    name: 'pro',
+    component: Pro
+  },
 ];
 
 export default routes.map(route => {
