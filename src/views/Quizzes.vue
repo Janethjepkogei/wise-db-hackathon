@@ -1,5 +1,5 @@
 <template>
-  <quiz-card>
+  <quiz-card cardTitle="hello" cardText="there">
   </quiz-card>
 </template>
 

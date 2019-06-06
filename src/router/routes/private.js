@@ -4,6 +4,7 @@ import Home from '@/views/Home.vue'
 import Quizzes from '@/views/Quizzes.vue'
 import Teacher from '@/views/Teacher.vue'
 import MultipleChoice from '@/views/questions/MultipleChoice.vue'
+import QuizCreation from '@/views/QuizCreation.vue'
 
 const routes = [
     {
@@ -35,6 +36,11 @@ const routes = [
       path: '/quizzes/multiplechoice',
       name: 'multiplechoice',
       component: MultipleChoice
+    },
+    {
+      path: '/teacher/quizcreation',
+      name: 'quizcreation',
+      component: QuizCreation
     }
 ]
 

@@ -10,7 +10,7 @@
         <div id="actions">
             <div id="quiz" class="button">
                 <v-img :src="require('@/assets/exam.png')"></v-img>
-                <h3>Learn</h3>
+                <h3>Quiz</h3>
             </div>
             <div id="discuss" class="button">
                 <v-img :src="require('@/assets/discussion.png')"></v-img>
