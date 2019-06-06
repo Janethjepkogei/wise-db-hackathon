@@ -1,7 +1,7 @@
 import router from '@/router'
 
 const state = {
-    persona: sessionStorage.getItem('persona') || '',
+    persona: localStorage.getItem('persona') || '',
     topBarTitle: 'Home'
 }
 
@@ -10,7 +10,7 @@ const mutations = {
         state.topBarTitle = title;
     },
     setPersona(state, name) {
-        sessionStorage.setItem('persona', name)
+        localStorage.setItem('persona', name)
         // console.log(sessionStorage.getItem('persona'))
     }
 }
