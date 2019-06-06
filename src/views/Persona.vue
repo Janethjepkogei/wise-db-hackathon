@@ -5,7 +5,14 @@
       <v-subheader v-if="item.header" :key="item.header">{{ item.header }}</v-subheader>
       <v-divider v-else-if="item.divider" :key="index" :inset="item.inset"></v-divider>
 
-      <v-list-tile v-else :key="item.title" avatar @click font-size="25" font-weight="600">
+      <v-list-tile
+        v-else
+        :key="item.title"
+        avatar
+        @click="navigate({url: item.navigate})"
+        font-size="25"
+        font-weight="600"
+      >
         <v-list-tile-avatar size="92">
           <img :src="item.avatar">
         </v-list-tile-avatar>
@@ -19,25 +26,35 @@
 </template>
 
 <script>
+
+import store from '@/store'
+
 export default {
+  created() {
+    store.commit('navigation/setTopBarTitle', 'Persona')
+  },
   data() {
     return {
       personas: [
         {
           avatar: require("@/assets/athena.png"),
-          title: "Student"
+          title: "Student",
+          navigate: ""
         },
         {
           avatar: require("@/assets/greek1.png"),
-          title: "Certified Pro"
+          title: "Certified Pro",
+          navigate: "/Pro"
         },
         {
           avatar: require("@/assets/zeus.png"),
-          title: "Teacher"
+          title: "Teacher",
+          navigate: "/Teacher"
         },
         {
           avatar: require("@/assets/aphrodite.png"),
-          title: "Public"
+          title: "Public",
+          navigate: "/PublicHome"
         }
       ]
     };

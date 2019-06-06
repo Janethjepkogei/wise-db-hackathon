@@ -3,21 +3,17 @@
     <v-flex xs12 sm6 offset-sm3>
       <v-card>
         <v-img
-          src="https://cdn.vuetifyjs.com/images/cards/desert.jpg"
+          :src="cardImage"
           aspect-ratio="2.75"
         ></v-img>
 
-        <v-card-title primary-title>
+        <v-card-title class="primary" primary-title style="padding-top: 6px; padding-bottom: 6px;">
           <div>
             <h3 class="headline mb-0">{{cardTitle}}</h3>
-            <div>{{cardText}}</div>
+            <div>{{cardText1}}</div>
+            <div>{{cardText2}}</div>
           </div>
         </v-card-title>
-
-        <v-card-actions>
-          <v-btn flat color="orange">Share</v-btn>
-          <v-btn flat color="orange">Explore</v-btn>
-        </v-card-actions>
       </v-card>
     </v-flex>
   </v-layout>
@@ -25,6 +21,6 @@
 
 <script>
   export default {
-    props: ['cardTitle','cardText']
+    props: ['cardTitle','cardText1','cardText2','cardImage']
   }
 </script>
