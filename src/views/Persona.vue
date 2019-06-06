@@ -10,7 +10,7 @@
         v-else
         :key="item.title"
         avatar
-        @click="navigate({url: item.navigate})"
+        @click="(nav(item.navigate))"
         font-size="25"
         font-weight="600"
       >
@@ -70,7 +70,11 @@ export default {
     };
   },
   methods: {
-        ...mapActions('navigation', ['navigate'])
+        ...mapActions('navigation', ['navigate']),
+        nav(persona) {
+          store.commit('navigation/setPersona', persona)
+          this.navigate({url: '/' + persona});
+        }
   }
 };
 </script>

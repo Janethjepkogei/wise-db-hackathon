@@ -1,12 +1,16 @@
 import router from '@/router'
 
 const state = {
+    persona: '',
     topBarTitle: 'Home'
 }
 
 const mutations = {
     setTopBarTitle(state, title) {
         state.topBarTitle = title;
+    },
+    setPersona(state, name) {
+        state.persona = name;
     }
 }
 

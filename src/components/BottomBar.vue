@@ -5,7 +5,7 @@
     <v-btn
       flat
       value="recent"
-      @click="navigate({url: '/persona'})"
+      @click="nav()"
     >
       <span>Home</span>
       <v-icon>home</v-icon>
@@ -14,6 +14,7 @@
     <v-btn
       flat
       value="favorites"
+      @click="navigate({url: '/persona'})"
     >
       <span>Logout</span>
       <v-icon>power_settings_new</v-icon>
@@ -22,12 +23,22 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 import store from '@/store'
 
 export default {
+  computed: {
+    ...mapState({
+      loggedIn: state => state.account.loggedIn,
+      topBarTitle: state => state.navigation.topBarTitle,
+      persona: state => state.navigation.persona
+    })
+  },
   methods: {
-    ...mapActions('navigation', ['navigate'])
+    ...mapActions('navigation', ['navigate']),
+    nav() {
+      this.navigate({url: '/' + this.persona})
+    }
   }
 }
 </script>
