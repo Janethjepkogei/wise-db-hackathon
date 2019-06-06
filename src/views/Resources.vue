@@ -66,7 +66,7 @@ export default {
         {
           avatar: require("@/assets/education.png"),
           status: "green",
-          navigate: "Blog"
+          navigate: "/Blog"
         },
         {
           avatar: require("@/assets/heart.png"),
@@ -93,6 +93,9 @@ export default {
   methods: {
     ...mapActions("navigation", ["navigate"]),
     nav(url) {
+      if (url === '/Blog') {
+        this.navigate({url: url});
+      }
       window.location = url;
     }
   }
