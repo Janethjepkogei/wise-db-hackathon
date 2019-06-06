@@ -11,6 +11,7 @@ const mutations = {
     },
     setPersona(state, name) {
         sessionStorage.setItem('persona', name)
+        // console.log(sessionStorage.getItem('persona'))
     }
 }
 
