@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <div class="mentor">
-            <v-img height="20%" width="20%" :src="require('@/assets/conversation.png')"></v-img>
+            <v-img height="25%" width="25%" :src="require('@/assets/conversation.png')"></v-img>
             <!-- <h2>ASK</h2> -->
             <p></p>
             <v-img height="100%" width="75%" :src="require('@/assets/Ask-your-question-here.png')"></v-img>
