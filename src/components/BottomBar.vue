@@ -16,7 +16,7 @@
       value="favorites"
     >
       <span>Logout</span>
-      <v-icon>favorite</v-icon>
+      <v-icon>power_settings_new</v-icon>
     </v-btn>
   </v-bottom-nav>
 </template>

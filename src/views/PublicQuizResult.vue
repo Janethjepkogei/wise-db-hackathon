@@ -6,15 +6,16 @@
                 <div>Your Score</div>
                 <div>8/10</div>
             </v-layout>
-            <v-layout id="#scoreRank">
+            <!-- <v-layout id="#scoreRank">
                 <v-content class="center-text">Score: 2782</v-content>
                 <v-content class="center-text">Rank: 36/250</v-content>
-            </v-layout>
-            <v-layout id="rankChange">
+            </v-layout> -->
+            <v-img id="heartpic" :src="require('@/assets/heart.png')"></v-img>
+            <!-- <v-layout id="rankChange">
                 <v-content class="center-text">You moved up 4 places</v-content>
-            </v-layout>
+            </v-layout> -->
             <v-layout id="resultOptions" @click="navigate({url: '/persona'})">
-                <v-btn flat>Now is a good time to create a profile</v-btn>
+                <v-btn flat class="primary"><span>Now is a good time to create a profile</span></v-btn>
                 <v-btn flat>I want to take another quiz</v-btn>
             </v-layout>
         </v-flex>
@@ -36,6 +37,12 @@ export default {
 </script>
 
 <style>
+    #heartpic {
+        height: 50%;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
     #quizResult > .layout {
         align-items: center;
     }

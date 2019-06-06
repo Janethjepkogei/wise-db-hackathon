@@ -41,7 +41,7 @@ import { mapActions } from 'vuex'
 
 export default {
   created() {
-    store.commit('navigation/setTopBarTitle', 'Persona')
+    store.commit('navigation/setTopBarTitle', 'Choose your persona')
   },
   data() {
     return {
