@@ -1,4 +1,6 @@
 <template>
+  <!-- <v-toolbar app class="primary" style="position: sticky; bottom: 0;">
+    </v-toolbar> -->
   <v-bottom-nav :value="true" class="primary" app>
     <v-btn
       color="active"

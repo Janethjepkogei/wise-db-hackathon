@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+  <v-container id="container" class="text-xs-center">
         <countdown></countdown>
         <div id="takeQuiz" @click="navigate({url: '/categories'})">
             <v-img height="50%" width="50%" :src="require('@/assets/test.png')"></v-img>

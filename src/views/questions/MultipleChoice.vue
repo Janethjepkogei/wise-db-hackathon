@@ -5,7 +5,8 @@
             What affects the amount of interest that you would
             pay on a loan?
         </div>
-        <v-list v-for="(choice,index) in answerChoices" :key="index" class="accent answerChoices" :class="index===selected?primary:accent">
+        <v-list v-for="(choice,index) in answerChoices" :key="index" class="answerChoices"
+                :class="index === selected ? 'selected' : ''">
             <v-list-tile id="choice" @click="selected = index">
                 <v-list-tile-content>
                     {{choice}}
@@ -15,10 +16,8 @@
         <v-flex id="questionNavigation">
             <v-layout row>
                 <v-icon id="arrow">arrow_back</v-icon>
-                <mentor-advice></mentor-advice>
+                <mentor-advice title="Hint from Plato" :message="message"></mentor-advice>
                 <v-icon id="arrow">arrow_forward</v-icon>
-                <!-- <v-img id="backButton" :src="require('@/assets/back.png')"></v-img>
-                <v-img id="backButton" :src="require('@/assets/forward.png')"></v-img> -->
             </v-layout>
         </v-flex>
     </v-container>
@@ -42,6 +41,8 @@ export default {
                 'Time to repay the loan',
                 'All of the above'
             ],
+            message: 'Remember the formula that you used in middle school arithmetic to ' +
+                'calculate interest? Add it to a real life parameter such as credit worthiness!',
             selected: null
         }
     }
@@ -50,8 +51,12 @@ export default {
 
 <style>
     .answerChoices {
+        background-color: #4F8FCF !important;
         margin-bottom: 10px;
         margin-top: 10px;
+    }
+    .selected {
+        background-color: #17395b !important;
     }
     #arrow {
         font-weight: bold;
@@ -61,6 +66,7 @@ export default {
         width: 25%;
     }
     #choice {
+        background: unset;
         height: 30px;
     }
     #questionContainer {

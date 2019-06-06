@@ -1,5 +1,5 @@
 <template>
-    <v-container class="text-xs-center" id="container">
+    <v-container class="container text-xs-center">
         <div style="width: 100%;">
             <div>
                 <!-- <h1 id="title">$W!se</h1> -->
@@ -33,17 +33,17 @@ export default {
 </script>
 
 <style>
-    #buttons {
-        display: grid;
-        justify-content: center;
-        padding-top: 10px;
-    }
-    #container {
+    .container {
         align-items: center;
         display: grid;
         height: 100%;
         padding-left: 0;
         padding-right: 0;
+    }
+    #buttons {
+        display: grid;
+        justify-content: center;
+        padding-top: 10px;
     }
     #login {
         width: 'fill-content';
