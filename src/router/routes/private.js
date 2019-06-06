@@ -17,6 +17,7 @@ import Resources from "@/views/Resources.vue";
 import QAForum from "@/views/qa-forum.vue";
 import Blog from "@/views/blog.vue";
 import MultipleChoicePublic from "@/views/questions/MultipleChoicePublic.vue";
+import PublicQuizResult from "@/views/PublicQuizResult.vue";
 
 const routes = [
   {
@@ -53,6 +54,11 @@ const routes = [
     path: "/quizzes/multiplechoicepublic",
     name: "multiplechoicepublic",
     component: MultipleChoicePublic
+  },
+  {
+    path: "/quizzes/publicquizresult",
+    name: "publicquizresult",
+    component: PublicQuizResult
   },
   {
     path: "/quizzes",

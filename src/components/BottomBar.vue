@@ -3,7 +3,6 @@
     </v-toolbar> -->
   <v-bottom-nav :value="true" class="primary" app>
     <v-btn
-      color="active"
       flat
       value="recent"
       @click="navigate({url: '/persona'})"
@@ -13,7 +12,6 @@
     </v-btn>
 
     <v-btn
-      color="active"
       flat
       value="favorites"
     >
