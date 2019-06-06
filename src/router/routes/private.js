@@ -1,7 +1,7 @@
 import Categories from "@/views/Categories.vue";
 import HelloWorld from "@/components/HelloWorld.vue";
 import Home from "@/views/Home.vue";
-import Quizzes from "@/views/Quizzes.vue";
+import TeacherQuizzes from "@/views/TeacherQuizzes.vue";
 import Teacher from "@/views/Teacher.vue";
 import MultipleChoice from "@/views/questions/MultipleChoice.vue";
 import QuizCreation from "@/views/QuizCreation.vue";
@@ -10,6 +10,7 @@ import Pro from "@/views/Pro.vue";
 import PublicHome from "@/views/PublicHome.vue";
 import PublicQuiz from "@/views/PublicQuiz.vue";
 import PublicResult from "@/views/PublicResult.vue";
+import StudentQuizzes from "@/views/StudentQuizzes.vue";
 
 const routes = [
   {
@@ -28,9 +29,9 @@ const routes = [
     component: Home
   },
   {
-    path: "/quizzes",
+    path: "/teacher/quizzes",
     name: "quizzes",
-    component: Quizzes
+    component: TeacherQuizzes
   },
   {
     path: "/teacher",
@@ -41,6 +42,11 @@ const routes = [
     path: "/quizzes/multiplechoice",
     name: "multiplechoice",
     component: MultipleChoice
+  },
+  {
+    path: "/quizzes",
+    name: "quizzes",
+    component: StudentQuizzes
   },
   {
     path: "/persona",
