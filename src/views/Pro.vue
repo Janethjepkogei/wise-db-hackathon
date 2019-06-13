@@ -7,11 +7,7 @@
         <div id="network">
             <v-img height="60%" width="60%" :src="require('@/assets/ProHome-Network.png')"></v-img>
         </div>
-        <div>
-            <br/>
-            <br/>
-        </div>
-        <div id="actions">
+        <div id="proActions">
             <div id="search" class="button">
                 <v-img :src="require('@/assets/job-search.png')"></v-img>
                 <h3>Search</h3>
@@ -21,7 +17,7 @@
                 <h3>Discuss</h3>
             </div>
         </div>
-        <div id="actions">
+        <div id="proActions">
             <div id="learn" class="learn-button">
                 <h3>Learn</h3>
                 <v-img :src="require('@/assets/book.png')"></v-img>
@@ -55,13 +51,13 @@ export default {
     }
     .learn-button {
         height: 10%;
-        width: 10%;
-        vertical-align: bottom;
+        width: 10%;;
     }
-    #actions {
+    #proActions {
         display: flex;
         justify-content: space-around;
-        margin-top: 20px;
+        margin-bottom: auto;
+        margin-top: auto;
     }
     #rank {
         color: #4F8FCF;
@@ -82,8 +78,4 @@ export default {
         font-family: 'Times New Roman', Times, serif;
         font-size: 45px;
     }
-    /* #learn {
-        text-align: center;
-        align-content: center;
-    } */
 </style>

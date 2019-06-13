@@ -24,11 +24,6 @@ export default {
       loggedIn: state => state.account.loggedIn,
       topBarTitle: state => state.navigation.topBarTitle
     })
-  },
-  data () {
-    return {
-      //
-    }
   }
 }
 </script>
@@ -39,9 +34,5 @@ export default {
   }
   .white-text {
     color: white;
-  }
-  #mainContent {
-    height: 700px
-  }
-  
+  }  
 </style>

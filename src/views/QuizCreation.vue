@@ -41,7 +41,7 @@ export default {
     components: {
     },
     created() {
-        store.commit('navigation/setTopBarTitle', 'Quiz Creation')
+        store.commit('navigation/setTopBarTitle', 'Create New Quiz')
     },
     methods: {
         ...mapActions('navigation', ['navigate'])
@@ -54,6 +54,10 @@ export default {
 </script>
 
 <style>
+	#quizCreationContainer {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
 	#quizCreationContainer label {
 		font-size: 20px;
 	}

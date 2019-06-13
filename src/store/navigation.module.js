@@ -11,7 +11,6 @@ const mutations = {
     },
     setPersona({}, name) {
         localStorage.setItem('persona', name)
-        console.log(localStorage.getItem('persona'))
     }
 }
 

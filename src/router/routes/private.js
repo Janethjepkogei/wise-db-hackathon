@@ -37,7 +37,7 @@ const routes = [
   },
   {
     path: "/teacher/quizzes",
-    name: "quizzes",
+    name: "teacherquizzes",
     component: TeacherQuizzes
   },
   {

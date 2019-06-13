@@ -1,17 +1,17 @@
 <template>
-    <v-toolbar app class="primary">
+    <v-toolbar app class="primary" id="topBarToolbar">
       <v-toolbar-side-icon @click="menu = !menu" id="menuIcon"></v-toolbar-side-icon>
-      <v-menu v-model="menu" :close-on-content-click="false" dark transition="slide-y-transition" origin="left center">
+      <v-menu id="topBarMenu" v-model="menu" :close-on-content-click="false" dark offset-y>
         <v-card class="accent">
             <v-list class="accent">
             <v-list-tile avatar>
                 <v-list-tile-avatar>
-                <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John">
+                <img src="@/assets/user.png" alt="Guest">
                 </v-list-tile-avatar>
 
                 <v-list-tile-content>
-                <v-list-tile-title>John Leider</v-list-tile-title>
-                <v-list-tile-sub-title>Student</v-list-tile-sub-title>
+                <v-list-tile-title>Guest User</v-list-tile-title>
+                <v-list-tile-sub-title>{{getTitle()}}</v-list-tile-sub-title>
                 </v-list-tile-content>
 
                 <v-list-tile-action>
@@ -70,12 +70,27 @@ export default {
         return {
             menu: false
         }
+    },
+    methods: {
+        getTitle() {
+            const persona = localStorage.getItem('persona');
+            switch (persona) {
+                case 'home':
+                    return 'Student';
+                case 'Pro':
+                    return 'Certified Pro';
+                case 'Teacher':
+                    return 'Teacher';
+                default:
+                    return 'General User';
+            }
+        }
     }
 }
 </script>
 
-<style>
-    #app > div.v-menu__content {
+<style scoped>
+    #app > div.v-menu__content.theme--dark.menuable__content__active {
         left: 0 !important;
         top: 56px !important;
     }

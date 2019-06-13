@@ -29,7 +29,7 @@ export default {
     MentorAdvice
   },
   created() {
-    store.commit("navigation/setTopBarTitle", "Quiz Categories");
+    store.commit("navigation/setTopBarTitle", "Student Quiz Categories");
     quizService.getQuizCategories().then(res => {
       this.categoryNames = res.data;
     });
@@ -88,9 +88,9 @@ export default {
         green: "check_circle"
       },
       message:
-        "Hi Eddy,<br><br>" +
-        "You may need to focus on Spending. You have taken fewer (0) quizzes this topic! " +
-        "You have also identified Spending as a weak area."
+        "Hi John,<br><br>" +
+        "You may need to focus on \"Spending\". You have taken 0 quizzes in this topic! " +
+        "You have also identified \"Spending\" as a weak area."
     };
   },
   methods: {

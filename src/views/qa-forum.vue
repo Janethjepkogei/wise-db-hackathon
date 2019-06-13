@@ -20,7 +20,7 @@ export default {
     components: {
     },
     created() {
-        store.commit('navigation/setTopBarTitle', 'QAForum')
+        store.commit('navigation/setTopBarTitle', 'Student Forum')
     },
     methods: {
         ...mapActions('navigation', ['navigate'])

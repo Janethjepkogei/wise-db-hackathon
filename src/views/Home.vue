@@ -1,14 +1,14 @@
 <template>
   <v-container id="container" class="text-xs-center">
         <countdown></countdown>
-        <div id="takeQuiz" @click="navigate({url: '/categories'})">
+        <div id="studentHomeTakeQuiz" @click="navigate({url: '/categories'})">
             <v-img height="50%" width="50%" :src="require('@/assets/test.png')"></v-img>
             <h2 class='salsbury'>Take Quiz</h2>
+            <div id="rank" class="salsbury">
+                Rank 41 / 2600 points
+            </div>
         </div>
-        <div id="rank" class="salsbury">
-            Rank 41 / 2600 points
-        </div>
-        <div id="actions">
+        <div id="studentActions">
             <div id="learn" class="button" @click="navigate({url: '/resources'})">
                 <v-img :src="require('@/assets/book.png')"></v-img>
                 <h3>Learn</h3>
@@ -31,7 +31,7 @@ export default {
         Countdown
     },
     created() {
-        store.commit('navigation/setTopBarTitle', 'Home')
+        store.commit('navigation/setTopBarTitle', 'Student Home')
     },
     methods: {
         ...mapActions('navigation', ['navigate'])
@@ -45,10 +45,11 @@ export default {
         text-align: center;
         width: 30%;
     }
-    #actions {
+    #studentActions {
         display: flex;
         justify-content: space-around;
-        margin-top: 20px;
+        margin-bottom: auto;
+        margin-top: auto;
     }
     #rank {
         color: #4F8FCF;
@@ -57,15 +58,16 @@ export default {
         font-weight: bold;
         text-align: center;
     }
-    #takeQuiz {
+    #studentHomeTakeQuiz {
+        margin-bottom: auto;
+        margin-top: auto;
         text-align: center;
     }
-    #takeQuiz > div {
+    #studentHomeTakeQuiz > div {
         margin-left: auto;
         margin-right: auto;
-        margin-top: 25px;
     }
-    #takeQuiz > h2 {
+    #studentHomeTakeQuiz > h2 {
         font-size: 45px;
     }
 </style>

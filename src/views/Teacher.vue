@@ -1,13 +1,13 @@
 <template>
     <v-container>
-        <div class="mentor">
+        <div id="teacherTitle">
             <v-img height="50%" width="50%" :src="require('@/assets/mentor.png')"></v-img>
-            <h2>Teacher</h2>
+            <h2 class="salsbury">Teacher</h2>
+            <div id="teacherStatus">
+                10 Mentees / 5 Waiting
+            </div>
         </div>
-        <div id="status">
-            10 Mentees / 5 Waiting
-        </div>
-        <div id="actions">
+        <div id="teacherActions">
             <div id="quiz" class="button" @click="navigate({url: '/teacher/quizzes'})">
                 <v-img :src="require('@/assets/exam.png')"></v-img>
                 <h3>Quiz</h3>
@@ -32,7 +32,7 @@ export default {
     components: {
     },
     created() {
-        store.commit('navigation/setTopBarTitle', 'Teacher')
+        store.commit('navigation/setTopBarTitle', 'Teacher Home')
     },
     methods: {
         ...mapActions('navigation', ['navigate'])
@@ -46,28 +46,25 @@ export default {
         text-align: center;
         width: 30%;
     }
-    #actions {
+    #teacherActions {
         display: flex;
         justify-content: space-around;
-        margin-top: 60px;
     }
-    #status {
+    #teacherStatus {
         color: #4F8FCF;
         font-size: 20px;
         font-style: oblique;
         font-weight: bold;
         text-align: center;
     }
-    .mentor {
+    #teacherTitle {
         text-align: center;
     }
-    .mentor > div {
+    #teacherTitle > div {
         margin-left: auto;
         margin-right: auto;
-        margin-top: 25px;
     }
-    .mentor > h2 {
-        font-family: 'Times New Roman', Times, serif;
+    #teacherTitle > h2 {
         font-size: 45px;
     }
 </style>

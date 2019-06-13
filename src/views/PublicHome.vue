@@ -16,13 +16,13 @@ import store from "@/store";
 
 export default {
   created() {
-    store.commit("navigation/setTopBarTitle", "Public");
+    store.commit("navigation/setTopBarTitle", "Welcome");
   },
   data() {
     return {
       index: 0,
       messages: [
-        'Hello!<br>Thank you for your interest in financial literacy.',
+        'Hello!<br>Thank you for your interest in financial literacy. My name is Plato. I will be your guide through your financial journey.',
         'Did you know that 30% of millenials have overdrawn their bank account in the last year and 48% say that they probably or definitely could not come up with $2000 for an unexpected expense?',
         'Well, financial literacy has not been our greatest of skills. Here is where Wise and their nifty mobile app could help you. Let us start with a few questions...'
       ]

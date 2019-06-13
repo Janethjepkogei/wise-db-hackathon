@@ -1,11 +1,11 @@
 <template>
     <v-container id="questionContainer">
-        <v-img id="mcimage" size="50%" :src="require('@/assets/mortgage.png')"></v-img>
+        <v-img id="mcimage" height="80%" width="50%" :src="require('@/assets/mortgage.png')"></v-img>
         <div class="question">
             What affects the amount of interest that you would
             pay on a loan?
         </div>
-        <v-list v-for="(choice,index) in answerChoices" :key="index" class="answerChoices"
+        <v-list v-for="(choice,index) in answerChoices" :key="index" id="mcAnswerChoices"
                 :class="index === selected ? 'selected' : ''">
             <v-list-tile id="choice" @click="selected = index">
                 <v-list-tile-content>
@@ -15,7 +15,7 @@
         </v-list>
         <v-flex id="questionNavigation">
             <v-layout row>
-                <v-icon class="navigation-arrow">arrow_back</v-icon>
+                <v-icon class="navigation-arrow" @click="$router.push({name: navigateBack()})">arrow_back</v-icon>
                 <mentor-advice title="Hint from Plato" :message="message"></mentor-advice>
                 <v-icon @click="navigate({url: 'truefalse'})" class="navigation-arrow">arrow_forward</v-icon>
             </v-layout>
@@ -32,7 +32,7 @@ export default {
         MentorAdvice
     },
     created() {
-        store.commit('navigation/setTopBarTitle', 'Debt Quiz')
+        store.commit('navigation/setTopBarTitle', 'Quiz Question 1')
     },
     data() {
         return {
@@ -42,22 +42,28 @@ export default {
                 'Time to repay the loan',
                 'All of the above'
             ],
-            message: 'Remember the formula that you used in middle school arithmetic to ' +
-                'calculate interest? Add it to a real life parameter such as credit worthiness!',
+            message: 'Many factors affect your interest rate, including your credit score, ' +
+                'amount borrowed, amount of time borrowed for, and more.',
             selected: null
         }
     },
     methods: {
-        ...mapActions('navigation', ['navigate'])
+        ...mapActions('navigation', ['navigate']),
+        navigateBack() {
+            const persona = localStorage.getItem('persona');
+            if (persona === 'Teacher') {
+                return 'teacherquizzes';
+            } else {
+                return 'quizzes';
+            }
+        }
     }
 }
 </script>
 
 <style>
-    .answerChoices {
+    #mcAnswerChoices {
         background-color: #4F8FCF !important;
-        margin-bottom: 10px;
-        margin-top: 10px;
     }
     .navigation-arrow {
         align-items: center;
@@ -79,6 +85,10 @@ export default {
     #choice {
         background: unset;
         height: 30px;
+    }
+    #mcimage {
+        margin-left: auto;
+        margin-right: auto;
     }
     #questionContainer {
         padding-left: 25px;

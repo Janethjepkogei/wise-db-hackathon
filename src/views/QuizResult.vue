@@ -16,7 +16,7 @@
             <v-layout id="resultOptions">
                 <v-btn flat>Review incorrect question</v-btn>
                 <v-btn flat>Review all questions</v-btn>
-                <v-btn flat>Retake Quiz</v-btn>
+                <v-btn flat @click="$router.push('/quizzes')">Retake Quiz</v-btn>
             </v-layout>
         </v-flex>
     </v-container>

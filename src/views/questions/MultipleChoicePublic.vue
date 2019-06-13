@@ -24,7 +24,7 @@
         </div>
         <v-flex id="questionNavigation">
             <v-layout row>
-                <v-icon class="navigation-arrow">arrow_back</v-icon>
+                <v-icon class="navigation-arrow" style="visibility: hidden;">arrow_back</v-icon>
                 <mentor-advice title="Hint from Plato" :message="message"></mentor-advice>
                 <v-icon @click="navigate({url: 'publicquizresult'})" class="navigation-arrow">arrow_forward</v-icon>
             </v-layout>

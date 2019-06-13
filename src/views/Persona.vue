@@ -107,9 +107,6 @@ export default {
   text-align: right;
   padding-right: 15px;
 }
-.avatar-right > div {
-  margin-right: 30px;
-}
 #personaList {
   height: 100px !important;
 }

@@ -25,6 +25,9 @@ import store from "@/store";
 import { mapActions } from "vuex";
 
 export default {
+  created() {
+      store.commit('navigation/setTopBarTitle', 'Resources')
+  },
   data() {
     return {
       resourcesNames: [
@@ -85,7 +88,7 @@ export default {
         green: "check_circle"
       },
       message:
-        "Hi Eddy,<br><br>" +
+        "Hi John,<br><br>" +
         "You may need to focus on Spending. You have taken fewer (0) quizzes this topic! " +
         "You have also identified Spending as a weak area."
     };
@@ -95,8 +98,9 @@ export default {
     nav(url) {
       if (url === '/Blog') {
         this.navigate({url: url});
+      } else {
+        window.open(url, '_blank');
       }
-      window.location = url;
     }
   }
 };

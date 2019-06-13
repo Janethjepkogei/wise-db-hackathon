@@ -26,7 +26,7 @@ export default {
       QuizCard
     },
     created() {
-        store.commit('navigation/setTopBarTitle', 'Quizzes')
+        store.commit('navigation/setTopBarTitle', 'Teacher Quizzes')
     },
     methods: {
         ...mapActions('navigation', ['navigate'])

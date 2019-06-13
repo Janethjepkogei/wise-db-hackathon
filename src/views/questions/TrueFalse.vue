@@ -2,7 +2,7 @@
     <v-container id="questionContainer">
         <v-img :src="require('@/assets/piggy-bank.jpg')"></v-img>
         <div class="question">
-            Retirement income paid by a company is called a Pension.
+            Retirement income paid by a company is called a pension.
         </div>
         <v-layout class="true-false">
             <v-btn flat class="answerChoices" :class="'T' === selected ? 'selected' : ''" @click="selected = 'T'">True</v-btn>
@@ -27,18 +27,12 @@ export default {
         MentorAdvice
     },
     created() {
-        store.commit('navigation/setTopBarTitle', 'Debt Quiz')
+        store.commit('navigation/setTopBarTitle', 'Quiz Question 2')
     },
     data() {
         return {
-            answerChoices: [
-                'Your credit rating',
-                'How much you borrow',
-                'Time to repay the loan',
-                'All of the above'
-            ],
-            message: 'Remember the formula that you used in middle school arithmetic to ' +
-                'calculate interest? Add it to a real life parameter such as credit worthiness!',
+            message: 'Don\'t confuse pension with a 401k. A pension is funded by the employer. ' +
+                'A 401k is funded by the employee.',
             selected: null
         }
     },
